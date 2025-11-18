@@ -773,7 +773,7 @@ def parse_payload(payload: dict):
       "nutrition": {"hydration_ml": 900, "meals": 2},
       "emergency": {"active": false, "reason": ""}
     }
-    """
+    
     ts_str = payload.get("timestamp")
     try:
         ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00")) if ts_str else datetime.utcnow()
