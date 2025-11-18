@@ -152,7 +152,6 @@ def parse_payload(payload: dict):
 
     ts_raw = payload.get("timestamp")
     ts = None
-
     try:
         if isinstance(ts_raw, datetime):
             ts = ts_raw
@@ -175,7 +174,7 @@ def parse_payload(payload: dict):
     nutrition = payload.get("nutrition", {}) or {}
     emergency = payload.get("emergency", {"active": False, "reason": ""}) or {"active": False, "reason": ""}
 
-   return ts, hr, sleep, fitness, nutrition, emergency
+    return ts, hr, sleep, fitness, nutrition, emergency
 
 def fetch_http_json(url: str):
     if not url:
