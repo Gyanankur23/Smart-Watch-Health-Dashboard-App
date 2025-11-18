@@ -740,7 +740,7 @@ init_state()
 # Data helpers
 # -----------------------------
 def parse_payload(payload: dict):
-    """
+
     Expected schema:
     {
       "timestamp": "2025-11-18T12:34:56Z",
