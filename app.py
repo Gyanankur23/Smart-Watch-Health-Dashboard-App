@@ -682,12 +682,6 @@ if auto_refresh:
     for i in range(refresh_sec, 0, -1):
         countdown_placeholder.markdown(f"<div class='footer'>🔄 Refreshing in {i} seconds…</div>", unsafe_allow_html=True)
         time.sleep(1)
-
-.pulse-dot {
-  background-color: #22d3ee; display: inline-block; margin-right: 6px;
-  box-shadow: 0 0 0 rgba(34,211,238, 0.7);
-  
-}
 </style>
 """
 
