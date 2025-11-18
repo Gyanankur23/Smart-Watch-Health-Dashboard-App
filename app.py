@@ -683,9 +683,6 @@ if auto_refresh:
         time.sleep(1)
     st.experimental_rerun().footer {
   color: var(--brand-muted);
-  font-size: 12px;
-  padding-top: 8px;
-  text-align: right;
 }
 
 /* Pulsing dot for live activity */
