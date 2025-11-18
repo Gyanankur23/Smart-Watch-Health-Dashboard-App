@@ -741,15 +741,7 @@ init_state()
 # -----------------------------
 def parse_payload(payload: dict):
 
-    Expected schema:
-    {
-      "timestamp": "2025-11-18T12:34:56Z",
-      "heart_rate_bpm": 72,
-      "sleep": {"duration_min": 420, "quality": "good"},
-      "fitness": {"steps": 3456, "calories": 280},
-      "nutrition": {"hydration_ml": 900, "meals": 2},
-      "emergency": {"active": false, "reason": ""}
-    }
+    
     
     ts_str = payload.get("timestamp")
     try:
