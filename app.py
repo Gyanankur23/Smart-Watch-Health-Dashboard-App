@@ -682,21 +682,8 @@ if auto_refresh:
     for i in range(refresh_sec, 0, -1):
         countdown_placeholder.markdown(f"<div class='footer'>🔄 Refreshing in {i} seconds…</div>", unsafe_allow_html=True)
         time.sleep(1)
-"""
 
-JS_EFFECTS = """
-<script>
-/* Minor UX nicety: fade-in content */
-document.addEventListener("DOMContentLoaded", function(){
-  const blocks = document.querySelectorAll(".block-container, .metric-card, .card");
-  blocks.forEach(b => {
-    b.style.transition = "opacity 0.3s ease";
-    b.style.opacity = 0.0;
-    setTimeout(() => { b.style.opacity = 1.0; }, 100);
-  });
-});
-</script>
-"""
+
 
 st.markdown(BRAND_CSS, unsafe_allow_html=True)
 components.html(JS_EFFECTS, height=0)
