@@ -152,6 +152,15 @@ def parse_payload(payload: dict):
 
     ts_raw = payload.get("timestamp")
     ts = None
+    if data_source.startswith("HTTP"):
+    data_url = st.sidebar.text_input(
+        "HTTPS JSON Feed URL",
+        value=os.getenv("DATA_URL", ""),
+        placeholder="https://example.com/live.json",
+        help="Paste a valid HTTPS endpoint that returns a JSON payload."
+    )
+else:
+    data_url = ""
     try:
         if isinstance(ts_raw, datetime):
             ts = ts_raw
