@@ -152,7 +152,7 @@ def parse_payload(payload: dict):
 
     ts_raw = payload.get("timestamp")
     ts = None
-    if data_source.startswith("HTTP"):
+if data_source.startswith("HTTP"):
     data_url = st.sidebar.text_input(
         "HTTPS JSON Feed URL",
         value=os.getenv("DATA_URL", ""),
