@@ -1,8 +1,8 @@
 import streamlit as st
 import plotly.graph_objects as go
 import random
-import time
 from datetime import datetime, timedelta
+import time
 
 # Page setup
 st.set_page_config(page_title="Health Book", page_icon="❤️", layout="wide")
@@ -12,10 +12,10 @@ if "hr_series" not in st.session_state:
     st.session_state.hr_series = []
 
 # Sidebar settings
-st.sidebar.title("Settings")
+st.sidebar.title("Smartwatch Sync Settings")
 safe_low = st.sidebar.slider("Safe BPM Low", 40, 70, 55)
 safe_high = st.sidebar.slider("Safe BPM High", 90, 130, 100)
-refresh_sec = st.sidebar.slider("Refresh Interval (sec)", 1, 10, 2)
+refresh_sec = st.sidebar.slider("Refresh Interval (sec)", 1, 10, 3)
 
 # Simulate live heart rate
 def simulate_heart_rate():
@@ -42,7 +42,8 @@ def update_hr_series():
 latest_bpm = update_hr_series()
 
 # Title and current BPM
-st.title("Health Book")
+st.title("Health Book – Smartwatch Dashboard")
+st.caption("Live health monitoring synced from wearable device")
 st.metric("Current Heart Rate", f"{latest_bpm} bpm")
 
 # Heart rate chart
@@ -83,27 +84,31 @@ st.plotly_chart(fig, use_container_width=True)
 # Emergency status
 st.subheader("Emergency Status")
 if latest_bpm >= safe_high or latest_bpm <= safe_low:
-    st.error(f" Alert: Heart rate {latest_bpm} bpm out of safe range!")
+    st.error(f"⚠️ Alert: Heart rate {latest_bpm} bpm out of safe range!")
 else:
-    st.success(" Heart rate within safe range.")
+    st.success("✅ Heart rate within safe range.")
 
 # Panels
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.subheader("Sleep")
+    st.subheader("Sleep Summary")
     st.write("Duration: 420 min")
     st.write("Quality: Good")
 
 with col2:
-    st.subheader("Fitness")
+    st.subheader("Fitness Stats")
     st.write("Steps: 3456")
     st.write("Calories: 280")
 
 with col3:
-    st.subheader("Nutrition")
+    st.subheader("Nutrition Intake")
     st.write("Hydration: 900 ml")
     st.write("Meals: 2")
 
-# Auto-refresh
-time.sleep(refresh_sec)
+# Countdown refresh
+countdown = st.empty()
+for i in range(refresh_sec, 0, -1):
+    countdown.text(f"🔄 Refreshing in {i} seconds…")
+    time.sleep(1)
+
 st.experimental_rerun()
