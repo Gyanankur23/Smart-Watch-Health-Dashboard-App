@@ -183,7 +183,7 @@ else:
     nutrition = payload.get("nutrition", {}) or {}
     emergency = payload.get("emergency", {"active": False, "reason": ""}) or {"active": False, "reason": ""}
 
-    return ts, hr, sleep, fitness, nutrition, emergency
+return ts, hr, sleep, fitness, nutrition, emergency
 
 def fetch_http_json(url: str):
     if not url:
