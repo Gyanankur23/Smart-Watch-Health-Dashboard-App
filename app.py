@@ -683,8 +683,6 @@ if auto_refresh:
         countdown_placeholder.markdown(f"<div class='footer'>🔄 Refreshing in {i} seconds…</div>", unsafe_allow_html=True)
         time.sleep(1)
 
-
-/* Pulsing dot for live activity */
 .pulse-dot {
   background-color: #22d3ee; display: inline-block; margin-right: 6px;
   box-shadow: 0 0 0 rgba(34,211,238, 0.7);
