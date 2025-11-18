@@ -689,7 +689,7 @@ if auto_refresh:
 .pulse-dot {
   background-color: #22d3ee; display: inline-block; margin-right: 6px;
   box-shadow: 0 0 0 rgba(34,211,238, 0.7);
-  animation: pulse 2s infinite;
+  
 }
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(34,211,238, 0.7); }
