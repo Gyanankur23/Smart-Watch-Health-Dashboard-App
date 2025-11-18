@@ -682,7 +682,6 @@ if auto_refresh:
     for i in range(refresh_sec, 0, -1):
         countdown_placeholder.markdown(f"<div class='footer'>🔄 Refreshing in {i} seconds…</div>", unsafe_allow_html=True)
         time.sleep(1)
-</style>
 """
 
 JS_EFFECTS = """
