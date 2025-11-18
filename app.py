@@ -687,7 +687,6 @@ if auto_refresh:
 
 /* Pulsing dot for live activity */
 .pulse-dot {
-  width: 12px; height: 12px; border-radius: 50%;
   background-color: #22d3ee; display: inline-block; margin-right: 6px;
   box-shadow: 0 0 0 rgba(34,211,238, 0.7);
   animation: pulse 2s infinite;
